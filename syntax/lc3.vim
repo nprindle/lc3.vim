@@ -13,9 +13,9 @@ syn case ignore
 syn match lc3Label     /[A-Za-z0-9_]\+\w/
 syn match lc3Register  /[rR][0-7]/
 syn match lc3Directive /\.[A-Za-z]\+/
-syn match lc3Decimal   /#-\?[0-9]\+/
-syn match lc3Hex       /x-\?[A-Fa-f0-9]\+/
-syn match lc3Binary    /b-\?[01]\+/
+syn match lc3Decimal   /#\=-\=\<[0-9]\+\>/
+syn match lc3Hex       /x-\=[A-Fa-f0-9]\+/
+syn match lc3Binary    /b-\=[01]\+/
 syn region lc3String   start=+"+ skip=+\\"+ end=+"+
 syn region lc3Comment  start=+;+ end=+$+
 
