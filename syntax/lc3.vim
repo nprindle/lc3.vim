@@ -19,7 +19,14 @@ syn match lc3Binary    /b-\=[01]\+/
 syn region lc3String   start=+"+ skip=+\\"+ end=+"+
 syn region lc3Comment  start=+;+ end=+$+
 
-syn keyword lc3Opcode add and br brn brz brp brnz brnp brzp brnzp getc in jmp jsr jsrr ld ldb ldi ldr ldw lea lshf halt not out puts ret rti rshfa shf st stb sti str trap 
+" LC-3 opcodes, minus branches
+syn keyword lc3Opcode add ld st jsrr jsr and ldr str rti not ldi sti jmp ret lea trap
+" Branches
+syn keyword lc3Opcode br brn brz brp brnz brnp brzp brnzp
+" Trap subroutines
+syn keyword lc3Opcode getc out puts in putsp halt
+" LC-3b opcodes
+syn keyword lc3Opcode ldb ldw lshf rshfl rshfa stb stw xor
 
 " Link colors.
 hi def link lc3Opcode    Statement
