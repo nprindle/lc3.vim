@@ -7,26 +7,32 @@ if exists("b:current_syntax")
     finish
 endif
 
-syn case ignore
+syntax case ignore
 
 " Match regexes.
-syn match lc3Label     /[A-Za-z0-9_]\+\w/
-syn match lc3Register  /[rR][0-7]/
-syn match lc3Directive /\.[A-Za-z]\+/
-syn match lc3Decimal   /#\=-\=\<[0-9]\+\>/
-syn match lc3Hex       /x-\=[A-Fa-f0-9]\+/
-syn match lc3Binary    /b-\=[01]\+/
-syn region lc3String   start=+"+ skip=+\\"+ end=+"+
-syn region lc3Comment  start=+;+ end=+$+
+syntax match lc3Label     /[A-Za-z0-9_]\+\w/
+syntax match lc3Register  /[rR][0-7]/
+syntax match lc3Decimal   /#\=-\=\<[0-9]\+\>/
+syntax match lc3Hex       /x-\=[A-Fa-f0-9]\+/
+syntax match lc3Binary    /b-\=[01]\+/
+syntax region lc3String   start=+"+ skip=+\\"+ end=+"+
+syntax region lc3Comment  start=+;+ end=+$+
+
+" Assembler directives/pseudo-ops
+syntax match lc3Directive /\.orig/
+syntax match lc3Directive /\.end/
+syntax match lc3Directive /\.fill/
+syntax match lc3Directive /\.blkw/
+syntax match lc3Directive /\.stringz/
 
 " LC-3 opcodes, minus branches
-syn keyword lc3Opcode add ld st jsrr jsr and ldr str rti not ldi sti jmp ret lea trap
+syntax keyword lc3Opcode add ld st jsrr jsr and ldr str rti not ldi sti jmp ret lea trap
 " Branches
-syn keyword lc3Opcode br brn brz brp brnz brnp brzp brnzp
+syntax keyword lc3Opcode br brn brz brp brnz brnp brzp brnzp
 " Trap subroutines
-syn keyword lc3Opcode getc out puts in putsp halt
+syntax keyword lc3Opcode getc out puts in putsp halt
 " LC-3b opcodes
-syn keyword lc3Opcode ldb ldw lshf rshfl rshfa stb stw xor
+syntax keyword lc3Opcode ldb ldw lshf rshfl rshfa stb stw xor
 
 " Link colors.
 hi def link lc3Opcode    Statement
