@@ -10,7 +10,7 @@ endif
 syntax case ignore
 
 " Match regexes.
-syntax match lc3Label     /[A-Za-z0-9_]\+\w/
+syntax match lc3Label     /[A-Za-z_][A-Za-z0-9_]*/
 syntax match lc3Register  /[rR][0-7]/
 syntax match lc3Decimal   /#\=-\=\<[0-9]\+\>/
 syntax match lc3Hex       /x-\=[A-Fa-f0-9]\+/
