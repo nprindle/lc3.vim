@@ -14,7 +14,15 @@ For example, [vim-plug](https://github.com/junegunn/vim-plug) users would place
 Plug 'zacharied/lc3.vim'
 ```
 
-after `call plug#begin()` .
+after `call plug#begin()`.
+
+If you want to automatically detect `.asm` extensions as LC-3 files, then add:
+
+```
+let g:lc3_detect_asm = 1
+```
+
+*before* the plugin is loaded (before `call plug#begin()` for vim-plug).
 
 ## Contributing
 
