@@ -25,8 +25,8 @@ syntax match lc3Directive /\.fill/
 syntax match lc3Directive /\.blkw/
 syntax match lc3Directive /\.stringz/
 
-" LC-3 opcodes, minus branches
-syntax keyword lc3Opcode add ld st jsrr jsr and ldr str rti not ldi sti jmp ret lea trap
+" LC-3 opcodes/aliases, minus branches
+syntax keyword lc3Opcode add ld st jsrr jsr and ldr str rti not ldi sti jmp ret lea trap nop
 " Branches
 syntax keyword lc3Opcode br brn brz brp brnz brnp brzp brnzp
 " Trap subroutines
